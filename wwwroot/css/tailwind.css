@@ -5981,6 +5981,10 @@ details.collapse summary::-webkit-details-marker {
   font-size: 1.200rem;
 }
 
+.text-sm {
+  font-size: 0.833rem;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));

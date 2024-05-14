@@ -28,7 +28,7 @@
             </div>
             <div class="navbar-end">
                 <div class="flex gap-4 items-center">
-                    <span>Theme</span>
+                    <i data-lucide="palette"></i>
                     <select class="select" data-choose-theme>
                         <option value="emerald">Light</option>
                         <option value="nord">Nord</option>
@@ -51,6 +51,11 @@
             &copy; 2024 - BulkyWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
     <!-- <script src="~/lib/jquery/dist/jquery.min.js"></script> -->
