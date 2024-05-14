@@ -12,6 +12,7 @@ namespace BulkyWeb.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder
                 .Entity<Category>()
                 .HasData(
