@@ -4,17 +4,26 @@
     <i data-lucide="arrow-left" class="group-hover:-translate-x-2"></i>
     Back to
     list</a>
-<form method="post">
+
+<form method="post" class="border border-base-300 p-8 rounded-xl">
     <h2 class="mb-4">Create Category</h2>
 
+    <div asp-validation-summary="All" class="mb-4 text-error"></div>
     <div class="mb-4">
         <label asp-for="Name" class="mb-2"></label>
-        <input asp-for="Name" class="input input-bordered w-full" />
+        <input asp-for="Name" class="input input-bordered w-full mb-2" />
+        <span asp-validation-for="Name" class="text-error"></span>
     </div>
     <div class="mb-4">
         <label asp-for="DisplayOrder" class="mb-2"></label>
-        <input asp-for="DisplayOrder" class="input input-bordered w-full" />
+        <input asp-for="DisplayOrder" class="input input-bordered w-full mb-2" />
+        <span asp-validation-for="DisplayOrder" class="text-error"></span>
     </div>
     <button type="submit" class="btn btn-primary w-full mb-4">Create</button>
-
 </form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
