@@ -27,40 +27,72 @@
             </div>
             <div class="flex">
                 <div class="max-md:hidden flex gap-4 items-center">
-                    <i data-lucide="palette"></i>
-                    <select class="select" data-choose-theme>
-                        <option value="emerald">Light</option>
-                        <option value="nord">Nord</option>
-                        <option value="fantasy">Fantasy</option>
-                        <option value="dark">Dark</option>
-                        <option value="dracula">Dracula</option>
-                        <option value="dim">Dim</option>
-                    </select>
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn m-1">
+                            Theme
+                            <svg width="12px" height="12px" class="h-2 w-2 fill-current opacity-60 inline-block"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
+                                <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+                            </svg>
+                        </div>
+                        <ul tabindex="0" class="dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-52">
+                            <li><input type="radio" name="theme-dropdown"
+                                    class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                    aria-label="Default" value="dim" />
+                            </li>
+                            <li><input type="radio" name="theme-dropdown"
+                                    class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                    aria-label="Dark" value="dark" /></li>
+                            <li><input type="radio" name="theme-dropdown"
+                                    class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                    aria-label="Dracula" value="dracula" /></li>
+                            <li><input type="radio" name="theme-dropdown"
+                                    class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                    aria-label="Nord" value="nord" /></li>
+                            <li><input type="radio" name="theme-dropdown"
+                                    class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                    aria-label="Emerald" value="emerald" /></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="dropdown dropdown-end md:hidden">
                     <div tabindex="0" role="button" class="btn m-1">
                         <i data-lucide="menu"></i>
                     </div>
-                    <ul tabindex="0" class="dropdown-content z-[1] menu  shadow bg-base-300 rounded-box w-56 min-h-lvh top-0">
+                    <ul tabindex="0"
+                        class="dropdown-content z-[1] menu  shadow bg-base-300 rounded-box w-56 min-h-lvh top-0">
                         <li>
-                            <a class="btn btn-ghost" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li>
-                            <a class="btn btn-ghost" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li>
-                            <a class="btn btn-ghost" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                            <a asp-area="" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
                         <li>
-                            <select class="select bg-base-300 text-center" data-choose-theme>
-                                <option value="emerald">Light</option>
-                                <option value="nord">Nord</option>
-                                <option value="fantasy">Fantasy</option>
-                                <option value="dark">Dark</option>
-                                <option value="dracula">Dracula</option>
-                                <option value="dim">Dim</option>
-                            </select>
+                            <details open>
+                                <summary class="text-center">Themes</summary>
+                                <ul>
+                                    <li><input type="radio" name="theme-dropdown"
+                                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                            aria-label="Default" value="dim" />
+                                    </li>
+                                    <li><input type="radio" name="theme-dropdown"
+                                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                            aria-label="Dark" value="dark" /></li>
+                                    <li><input type="radio" name="theme-dropdown"
+                                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                            aria-label="Dracula" value="dracula" /></li>
+                                    <li><input type="radio" name="theme-dropdown"
+                                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                            aria-label="Nord" value="nord" /></li>
+                                    <li><input type="radio" name="theme-dropdown"
+                                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                                            aria-label="Emerald" value="emerald" /></li>
+                                </ul>
+                            </details>
                         </li>
                     </ul>
                 </div>
@@ -83,7 +115,9 @@
         lucide.createIcons();
     </script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <script src="~/js/theme_controller.js" asp-append-version="true"></script>
+
+    @* <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script> *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
