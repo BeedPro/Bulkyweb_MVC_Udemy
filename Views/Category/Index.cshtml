@@ -5,11 +5,12 @@
     <a asp-controller="Category" asp-action="Create" class="btn btn-primary max-md:sm"><i data-lucide="circle-plus"></i>
         <span class="max-md:hidden">Create a new Category</span></a>
 </div>
-<table class="table table-zebra border border-base-300 -z-10">
+<table class="table table-zebra border border-base-300">
     <thead>
         <tr>
             <th>Category Name</th>
             <th>Display Order</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,12 @@
             <tr>
                 <td>@obj.Name</td>
                 <td>@obj.DisplayOrder</td>
+                <td>
+                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-ghost text-secondary"><i data-lucide="square-pen"></i></a>
+                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-ghost text-error"><i data-lucide="trash-2"></i></a>
+                    <div class="flex gap-2">
+                    </div>
+                </td>
             </tr>
         }
     </tbody>
