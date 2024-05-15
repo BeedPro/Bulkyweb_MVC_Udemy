@@ -19,6 +19,9 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
+[*.{cs,vb}]
+dotnet_diagnostic.CA1305.severity = none
+
 # Tab indentation (no size specified)
 [Makefile]
 indent_style = tab
