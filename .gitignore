@@ -14,9 +14,6 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
-# Tailwind output
-wwwroot/css/tailwind.css
-
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -413,3 +410,4 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore,node
+wwwroot/css/tailwind.css

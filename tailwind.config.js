@@ -5,9 +5,8 @@ module.exports = {
     "./Views/**/*.cshtml",
     "wwwroot/**/*.{js,css}",
   ],
-  darkMode: true,
   daisyui: {
-    themes: true,
+    themes: ["dim", "dark", "dracula", "nord", "emerald"],
   },
   theme: {
     container: {
