@@ -4,10 +4,10 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Bulky.DataAcess.Migrations
+namespace Bulky.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class AddAndSeedCategoriesTable : Migration
+    public partial class AddCategoryToDbAndSeed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,8 +16,7 @@ namespace Bulky.DataAcess.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table
-                        .Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
                     DisplayOrder = table.Column<int>(type: "INTEGER", nullable: false)
@@ -25,8 +24,7 @@ namespace Bulky.DataAcess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
-                }
-            );
+                });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -36,14 +34,14 @@ namespace Bulky.DataAcess.Migrations
                     { 1, 1, "Action" },
                     { 2, 2, "SciFi" },
                     { 3, 3, "History" }
-                }
-            );
+                });
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(name: "Categories");
+            migrationBuilder.DropTable(
+                name: "Categories");
         }
     }
 }
