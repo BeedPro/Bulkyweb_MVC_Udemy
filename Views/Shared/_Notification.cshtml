@@ -1,7 +1,7 @@
 @if (TempData["success"] != null)
 {
-    <div id="toast" class="toast toast-top toast-end cursor-pointer select-none max-md:w-full">
-        <div role="alert" class="alert alert-success">
+    <div id="toast" class="toast toast-top toast-center cursor-pointer select-none max-md:w-full">
+        <div role="alert" class="alert alert-success flex">
             <i data-lucide="check"></i>
             <span>@TempData["success"]</span>
         </div>
@@ -10,8 +10,8 @@
 
 @if (TempData["error"] != null)
 {
-    <div id="toast" class="toast toast-top toast-end cursor-pointer select-none max-md:w-full">
-        <div role="alert" class="alert alert-error">
+    <div id="toast" class="toast toast-top toast-center cursor-pointer select-none max-md:w-full">
+        <div role="alert" class="alert alert-error flex">
             <i data-lucide="x"></i>
             <span>@TempData["error"]</span>
         </div>
