@@ -10,10 +10,9 @@
     }
     else
     {
-        <title>Bulkyweb</title>
+        <title>Bulky.Web</title>
     }
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BulkyWeb.styles.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -26,7 +25,7 @@
     <header>
         <div class="navbar container justify-between">
             <div class="flex">
-                <a class="btn btn-ghost text-xl" asp-area="" asp-controller="Home" asp-action="Index">BulkyWeb</a>
+                <a class="btn btn-ghost text-xl" asp-area="" asp-controller="Home" asp-action="Index">Bulky.Web</a>
                 <ul class="max-md:hidden menu menu-horizontal gap-2">
                     <a class="btn btn-ghost" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     <a class="btn btn-ghost" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
@@ -106,14 +105,14 @@
             </div>
         </div>
     </header>
-    <div class="container">
+    <div class="container mb-auto">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
     <footer class="footer footer-center py-2 bg-base-200 text-base-content">
         <div class="container flex">
-            &copy; 2024 - BulkyWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Bulky - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <!-- Lucide Icons -->

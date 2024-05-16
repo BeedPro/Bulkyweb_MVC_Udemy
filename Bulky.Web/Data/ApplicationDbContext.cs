@@ -1,19 +1,19 @@
-using BulkyWeb.Models;
+using Bulky.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BulkyWeb.Data
+namespace Bulky.Web.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext>? options)
             : base(options) { }
 
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Category>? Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder
+            _ = modelBuilder
                 .Entity<Category>()
                 .HasData(
                     new Category

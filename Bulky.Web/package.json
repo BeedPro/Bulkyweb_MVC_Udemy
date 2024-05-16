@@ -1,5 +1,5 @@
 {
-  "name": "bulkyweb",
+  "name": "Bulky.Web",
   "version": "1.0.0",
   "description": "This is my repository for \"Complete guide to [ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-8.0) MVC (.NET 8)\" on Udemy. The course content and course demo are available on [DOT NET MASTERY](https://www.dotnetmastery.com/Home/Details?courseId=9).",
   "main": "index.js",

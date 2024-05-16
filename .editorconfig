@@ -21,6 +21,7 @@ indent_size = 4
 
 [*.{cs,vb}]
 dotnet_diagnostic.CA1305.severity = none
+dotnet_diagnostic.CS8604.severity = none
 
 # Tab indentation (no size specified)
 [Makefile]
