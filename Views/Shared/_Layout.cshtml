@@ -4,7 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BulkyWeb</title>
+    @if (ViewData["Title"] != null)
+    {
+        <title>@ViewData["Title"]</title>
+    }
+    else
+    {
+        <title>Bulkyweb</title>
+    }
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BulkyWeb.styles.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
