@@ -6,7 +6,7 @@ module.exports = {
     "wwwroot/**/*.{js,css}",
   ],
   daisyui: {
-    themes: ["dim", "dark", "dracula", "nord", "emerald"],
+    themes: ["dim", "dark", "dracula", "nord"],
   },
   theme: {
     container: {

@@ -1,7 +1,7 @@
 @if (TempData["success"] != null)
 {
     <div id="toast" class="toast toast-top toast-center cursor-pointer select-none max-md:w-full">
-        <div role="alert" class="alert alert-success flex">
+        <div role="alert" class="alert alert-success flex hover:bg-success/75 transition-colors">
             <i data-lucide="check"></i>
             <span>@TempData["success"]</span>
         </div>
@@ -11,7 +11,7 @@
 @if (TempData["error"] != null)
 {
     <div id="toast" class="toast toast-top toast-center cursor-pointer select-none max-md:w-full">
-        <div role="alert" class="alert alert-error flex">
+        <div role="alert" class="alert alert-error flex hover:bg-error/75 transition-colors">
             <i data-lucide="x"></i>
             <span>@TempData["error"]</span>
         </div>
