@@ -11,6 +11,7 @@
 *.userosscache
 *.sln.docstates
 
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -411,3 +412,12 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore,node
 wwwroot/css/tailwind.css
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+
+BulkyLocal.db
+BulkyLocal.db-shm
+BulkyLocal.db-wal
