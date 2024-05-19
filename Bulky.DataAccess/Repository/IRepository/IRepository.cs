@@ -2,8 +2,7 @@ using System.Linq.Expressions;
 
 namespace Bulky.DataAccess.Repository.IRepository
 {
-    // Implement Repository Interface
-    internal interface IRepository<T>
+    public interface IRepository<T>
         where T : class
     {
         IEnumerable<T> GetAll();

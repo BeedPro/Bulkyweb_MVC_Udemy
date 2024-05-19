@@ -1,4 +1,6 @@
 using Bulky.DataAccess.Data;
+using Bulky.DataAccess.Repository;
+using Bulky.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("WebApiDatabase"))
 );
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 WebApplication app = builder.Build();
 
