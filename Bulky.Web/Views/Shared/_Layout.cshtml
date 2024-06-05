@@ -22,14 +22,25 @@
     <script src="~/js/theme_controller.js" asp-append-version="true"></script>
 </head>
 
-<body>
+<body class="flex flex-col justify-between h-svh">
     <header>
         <div class="navbar container justify-between">
-            <div class="flex">
-                <a class="btn btn-ghost text-xl" asp-area="" asp-controller="Home" asp-action="Index">Bulky.Web</a>
-                <ul class="max-md:hidden menu menu-horizontal gap-2">
-                    <a class="btn btn-ghost" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    <a class="btn btn-ghost" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+            <div class="flex items-center">
+                <a class="btn btn-ghost text-xl" asp-area="Customer" asp-controller="Home" asp-action="Index">Bulky.Web</a>
+                <ul class="max-md:hidden menu menu-horizontal gap-2 items-center">
+                    <a class="btn btn-ghost" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    <details class="dropdown">
+                        <summary class="m-1 btn">Content Management</summary>
+                        <ul class="menu dropdown-content z-[1] bg-base-200 rounded-xl w-full">
+                            <li>
+                                <a class="" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
+                            </li>
+
+                            <li>
+                                <a class="" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
+                            </li>
+                        </ul>
+                    </details>
                 </ul>
             </div>
             <div class="flex">
@@ -73,10 +84,21 @@
                             <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li>
-                            <a asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+                            <details>
+                                <summary >Content Management</summary>
+                                <ul>
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
+                                    </li>
+
+                                    <li>
+                                        <a asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
+                                    </li>
+                                </ul>
+                            </details>
                         </li>
                         <li>
-                            <details open>
+                            <details>
                                 <summary class="text-center">Themes</summary>
                                 <ul>
                                     <li><input type="radio" name="theme-dropdown"
@@ -100,26 +122,25 @@
             </div>
         </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3 mb-auto">
+    <div class="container mb-auto">
+        <main role="main" class="pb-3">
             @RenderBody()
         </main>
-
     </div>
-    <footer class="footer footer-center py-12 bg-base-200 text-base-content absolute bottom-0">
+    <footer class="footer footer-center py-12 bg-base-200 text-base-content ">
         <div class="container flex">
             &copy; 2024 - Bulky - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @* <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script> *@
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@* <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script> *@
+@await RenderSectionAsync("Scripts", required: false)
 </html>

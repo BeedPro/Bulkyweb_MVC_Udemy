@@ -1,0 +1,37 @@
+@{ ViewData["Title"] = "Products"; }
+@model List<Product>
+<partial name="_Notification" />
+<div class="flex justify-between items-center mb-4">
+    <h1>Product List</h1>
+    <a asp-controller="Product" asp-action="Create" class="btn btn-primary max-md:sm"><i data-lucide="circle-plus"></i>
+        <span class="max-md:hidden">Create a new Product</span></a>
+</div>
+<table class="table table-zebra border border-base-300">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.Title</td>
+                <td>@obj.ISBN</td>
+                <td>@obj.Price</td>
+                <td>@obj.Author</td>
+                <td></td>
+                <td>
+                        <a asp-controller="Product" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-ghost text-secondary"><i data-lucide="square-pen"></i></a>
+                        <a asp-controller="Product" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-ghost text-error"><i data-lucide="trash-2"></i></a>
+                    <div class="flex gap-2">
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

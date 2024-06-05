@@ -19,8 +19,8 @@ help:
 	@echo "  add_migration 	: Add a new EF Core migration"
 	@echo "  rm_migration 	: Remove a previous EF Core migration"
 	@echo ""
-	@echo "Usage: add_make migration MIGRATION_NAME"
-	@echo "Example: add_make migration InitialMigration"
+	@echo "Usage: add_migration migration MIGRATION_NAME=NAME"
+	@echo "Example: rm_migration"
 
 # Targets
 build:
@@ -46,7 +46,7 @@ ifdef MIGRATION_NAME
 	dotnet ef migrations add $(MIGRATION_NAME) --project $(DataAccess_Project) --startup-project $(WebApp_Project)
 else
 	@echo "Error: Please provide a migration name."
-	@echo "Example: make migration MIGRATION_NAME"
+	@echo "Example: make migration MIGRATION_NAME=NAME"
 endif
 
 rm_migration:

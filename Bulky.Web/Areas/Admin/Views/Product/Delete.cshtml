@@ -1,0 +1,49 @@
+@{ ViewData["Title"] = "Delete Product"; }
+@model Product
+<a asp-controller="Product" asp-action="Index" class="mb-8 group items-center link link-hover flex gap-1">
+    <i data-lucide="arrow-left" class="group-hover:-translate-x-2"></i>
+    Back to
+    list</a>
+
+<form method="post" class="border border-base-300 px-8 pt-8 pb-12 rounded-xl bg-base-300">
+    <input asp-for="Id" hidden />
+    <h2 class="mb-4">Delete Product</h2>
+
+    <div asp-validation-summary="All" class="mb-4 text-error"></div>
+    <div class="mb-4">
+        <label asp-for="Title" class="mb-2"></label>
+        <input asp-for="Title" disabled class="input input-bordered w-full mb-2" />
+    </div>
+    <div class="mb-4">
+        <label asp-for="Description" class="mb-2"></label>
+        <textarea asp-for="Description" disabled class="input input-bordered w-full mb-2" ></textarea>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="ISBN" class="mb-2"></label>
+        <input asp-for="ISBN" disabled class="input input-bordered w-full mb-2" />
+    </div>
+    <div class="mb-4">
+        <label asp-for="Author" class="mb-2"></label>
+        <input asp-for="Author" disabled class="input input-bordered w-full mb-2" />
+    </div>
+    <div class="mb-4">
+        <label asp-for="ListPrice" class="mb-2"></label>
+        <input asp-for="ListPrice" disabled class="input input-bordered w-full mb-2" />
+    </div>
+    <div class="mb-4">
+        <label asp-for="Price50" class="mb-2"></label>
+        <input asp-for="Price50" disabled class="input input-bordered w-full mb-2" />
+    </div>
+    <div class="mb-4">
+        <label asp-for="Price100" class="mb-2"></label>
+        <input asp-for="Price100" disabled class="input input-bordered w-full mb-2" />
+    </div>
+    <button type="submit" class="btn btn-error w-full mb-4">Delete</button>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
