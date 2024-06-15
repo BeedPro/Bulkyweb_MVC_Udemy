@@ -47,10 +47,10 @@
         <span asp-validation-for="Price100" class="text-error"></span>
     </div>
     <div class="mb-4">
-        <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="mb-2 select">
-            <option disabled selected>--Select Category--</option>
+        <label asp-for="CategoryId" class="mb-4"></label>
+        <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="mb-2 select w-full">
+            <option disabled selected>--- Select Category ---</option>
         </select>
-        <input asp-for="CategoryId" class="input input-bordered w-full mb-2" />
         <span asp-validation-for="CategoryId" class="text-error"></span>
     </div>
     <button type="submit" class="btn btn-primary w-full mb-4">Create</button>
